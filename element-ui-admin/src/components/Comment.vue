@@ -34,10 +34,10 @@
             this.list=this.totalData.reverse();
         }else{
             // this.list=?
-            
-            this.list=this.totalData.slice(0,this.pagesize).reverse();
+            this.currentPage=1;
+            this.list=this.totalData.slice(this.totalCount-this.pagesize).reverse();
         }
-        this.currentPage=1;
+        
         // this.list.reverse();
       },
       turnPage(curr){

@@ -1,12 +1,15 @@
 <template>
   <div id="app">
-    <comment>
+    <article-table>
+      
+    </article-table>
+    <!-- <comment>
       <comment-form></comment-form>
       <commnet-list>
         <comment-item></comment-item>
       </commnet-list>
       <pagination></pagination>
-    </comment>
+    </comment> -->
     <!-- <ele-radio-group v-model="sex">
       <ele-radio label="女"></ele-radio>
       <ele-radio label="男"></ele-radio>
@@ -20,6 +23,7 @@
 
 <script>
   //@表示alias 地址短链接，在哪里都指向src 让地址引入更轻松
+  import ArticleTable from "@/views/ArticleTable"
   import Comment from "@/components/Comment"
   import EleRadioGroup from "@/components/EleRadioGroup"
   import EleRadio from "@/components/EleRadio"
@@ -32,7 +36,8 @@
       EleRadio,
       Login,
       markdown,
-      Comment
+      Comment,
+      ArticleTable
     },
     data() {
       return {
