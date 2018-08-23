@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import VueTada from './plugins/vue-tada';
-
+import './filters';
 Vue.use(VueTada);
 
 Vue.config.productionTip = false
