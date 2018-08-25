@@ -4,7 +4,7 @@
     <hr/>
     <h1>{{ status | instance_status }}</h1>
     <hr/>
-    <h2>{{ price | to_fix(2) | to_usd}}</h2>
+    <h2>{{ price | to_fix(2) | money_format | to_usd}}</h2>
     <hr/>
     <h3>{{ str | upper_case }}</h3>
     <hr/>
@@ -15,6 +15,14 @@
         <div class="action"><a :href="article.link">阅读更多</a></div>
       </li>
     </ul>
+    <hr/>
+    <h3 style="color:#ff6700">{{ date | date_formate()}}</h3>
+    <hr/>
+    <h3>卡号：{{ account | four_space }}</h3>
+    <hr/>
+    <h3>{{ str | upper_case | no_space }}</h3>
+    <hr/>
+    <h3>手机号：{{ phone | tel_formate }}</h3>
   </div>
 </template>
 
@@ -24,7 +32,7 @@ export default {
   data () {
     return {
       status: 'updating',
-      price: 23.33333,
+      price: 23333.33333,
       str: 'hello world',
       articles: [
         {
@@ -37,7 +45,10 @@ export default {
           summary: 'MySQL是一种 关系数据库管理系统，关系数据库将数据保存在不同的表中，而不是将所有数据放在一个大仓库内，这样就增加了速度并提高了灵活性。MySQL所使用的 SQL 语言是用于访问数据库的最常用标准化语言。MySQL 软件采用了 双授权政策，分为社区版和商业版，由于其 体积小、速度快、总体拥有成本低，尤其是 开放源码这一特点，一般中小型网站的开发都选择 MySQL 作为网站数据库。',
           link: 'https://joewrights.github.io/2018/07/01/mysql%E7%AC%94%E8%AE%B0/#more'
         }
-      ]
+      ],
+      date: new Date().getTime(),
+      account: '1234342324322342',
+      phone: '15770704072'
     }
   },
   methods: {
