@@ -11,6 +11,7 @@ import fourSpace from './four-space.filter';
 import noSpace from './no-space.filter';
 import moneyFormat from './money-format.filter';
 import telFormate from './tel-formate.filter';
+import idcardFormate from './idcard-formate.filter';
 
 const filters = {
   instanceStatus,
@@ -22,7 +23,8 @@ const filters = {
   fourSpace,
   noSpace,
   moneyFormat,
-  telFormate
+  telFormate,
+  idcardFormate
 };
 
 Object.keys(filters).forEach(key => {
