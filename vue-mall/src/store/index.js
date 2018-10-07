@@ -114,8 +114,36 @@ export default new Vuex.Store({
   },
 
   getters: {
-    getAllProducts(state) {
-      return state.notebooks.concat(state.smartphones);      
+    getAllProducts (state) {
+      return state.notebooks.concat(state.smartphones)
+    },
+    getAllNoteBooks (state) {
+      return state.notebooks
+    },
+    getAllPhones (state) {
+      return state.smartphones
+    },
+    getProductsInCart (state) {
+      return state.cartProducts
+    },
+    getPopupCart (state) {
+      return state.showPopupCart
+    }
+  },
+  mutations: {
+    ADD_PRODUCT (state, product) {
+      state.cartProducts.push(product)
+    },
+    SHOW_CART (state) {
+      state.showPopupCart = !state.showPopupCart
+    }
+  },
+  actions: {
+    addProduct (context, product) {
+      context.commit('ADD_PRODUCT', product)
+    },
+    showCart (context) {
+      context.commit('SHOW_CART')
     }
   }
 })

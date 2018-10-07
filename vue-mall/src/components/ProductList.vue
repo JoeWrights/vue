@@ -11,6 +11,15 @@
             {{ product.name }}
           </h2>
         </router-link>
+        <div class="product-price">
+          <span>R￥ {{ product.price }}, 00</span>
+          <span>10 x {{ Math.round(product.price / 10) }}, 00 </span>
+        </div>
+        <btn btnColor="btn btn-large btn-sucess"
+          :cartIcon="true"
+          @click.native="addProductToCart(product)">
+          添加到购物车
+        </btn>
       </li>
     </ul>
   </div>
@@ -18,12 +27,21 @@
 
 <script>
 import Btn from '@/components/Btn'
+import { mapActions } from 'vuex'
 export default {
   props: {
     products: Array
   },
   components: {
-    
+    Btn
+  },
+  methods: {
+    ...mapActions([
+      'addProduct'
+    ]),
+    addProductToCart (product) {
+      this.addProduct(product)
+    }
   }
 }
 </script>
